@@ -8,12 +8,16 @@ public class Battery {
         this.load = size;
     }
 
-    //Создать метод public void exchange(Battery another).
-    // Этот метод должен списывать заряд из батареи
-    // у кого вызывали метод exchange и добавить к объекту another.
-
     public void exchange (Battery another) {
-       this.load = another.load - this.load;
+        another.load = another.load + this.load;
+        this.load = 0;
+    }
+    public static void main(String[] args) {
+        Battery one = new Battery(10);
+        Battery two = new Battery(5);
+        one.exchange(two);
+        System.out.println("Battery charge 1: " + one.load);
+        System.out.println("Battery charge 2: " + two.load);
 
     }
 }
