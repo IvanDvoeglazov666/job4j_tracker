@@ -22,8 +22,6 @@ public class Library {
             }
               System.out.println(bibliotek[index].getName() + " " + bibliotek[index].getPage());
 
-
-
         }
 
     }
