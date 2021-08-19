@@ -8,7 +8,18 @@ public class Item {
     private int id;
     private String name;
     private LocalDateTime currentDateTime = LocalDateTime.now();
-    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", currentDateTime=" + currentDateTime +
+                ", currentDateTimeFormat='" + currentDateTimeFormat + '\'' +
+                '}';
+    }
+
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
     private String currentDateTimeFormat = currentDateTime.format(formatter);
 
 
