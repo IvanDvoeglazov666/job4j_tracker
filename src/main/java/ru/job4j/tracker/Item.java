@@ -9,6 +9,7 @@ public class Item {
     private String name;
     private LocalDateTime currentDateTime = LocalDateTime.now();
 
+
     @Override
     public String toString() {
         return "Item{" +
@@ -40,6 +41,7 @@ public class Item {
     public int hashCode() {
         return Objects.hash(id, name, currentDateTime, formatter, currentDateTimeFormat);
     }
+
 
     public Item(int id, String name, String currentDateTimeFormat) {
         this.id = id;
