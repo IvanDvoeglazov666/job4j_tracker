@@ -37,4 +37,4 @@ public final class Airbus  {
                 + "name='" + name + '\''
                 + '}';
     }
-}}
+}
