@@ -28,9 +28,21 @@ public class StartUI {
         }
     }
 
+    private boolean isNumber(String value) {
+        boolean rsl = true;
+        char[] check = value.toCharArray();
+        for (char num : check) {
+            if (num < 48 || num > 57) {
+                rsl = false;
+                break;
+            }
+        }
+        return rsl;
+    }
+
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
-        Input input = new ValidateInput();
+        Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output), new ShowallItemsAction(output), new ReplaceAction(output),
