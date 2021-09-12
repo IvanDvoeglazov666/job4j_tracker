@@ -11,7 +11,7 @@ public class ShowallItemsActionTest {
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new ExitAction()
+                new ExitAction(out)
         };
     }
 }
