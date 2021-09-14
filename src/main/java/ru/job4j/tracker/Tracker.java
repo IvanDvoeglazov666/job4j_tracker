@@ -5,9 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Tracker {
-    private final ArrayList<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<>();
     private int ids = 1;
-    private int size = 0;
 
     public Item add(Item item) {
         item.setId(ids++);
@@ -21,13 +20,12 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-         return items;
+        return List.copyOf(items);
     }
 
     public List<Item> findByName(String key) {
         List<Item> res = new ArrayList<>();
-       for (int index = 0; index < items.size(); index++) {
-            Item item = items.get(index);
+       for (Item item: items) {
             if(item.getName().equals(key)) {
                 res.add(item);
                 }
@@ -37,7 +35,7 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int index = 0; index < size; index++) {
+        for (int index = 0; index < items.size(); index++) {
             if (items.get(index).getId() == id) {
                 rsl = index;
                 break;
@@ -51,7 +49,7 @@ public class Tracker {
         boolean result = index != -1;
         if (result) {
             item.setId(id);
-            items.add(index, item);
+            items.set(index, item);
         }
         return result;
     }
@@ -60,8 +58,7 @@ public class Tracker {
         boolean rsl = false;
         int index = indexOf(id);
         if (index != -1) {
-            items.add(index,null);
-            System.arraycopy(items, index + 1, items, index, items.size());
+            items.remove(index);
             rsl = true;
         }
        return rsl;
