@@ -1,7 +1,7 @@
 package ru.job4j.ooa;
 
 public final class Airbus  {
-    private static int COUNT_ENGINE = 2;
+    private final static int COUNT_ENGINE = 2;
 
     private String name;
 
@@ -19,22 +19,18 @@ public final class Airbus  {
 
 
     public void printModel() {
-        System.out.println("Модель самолета: " + name);
+        System.out.println("Модель самолета: " + this.name);
     }
 
     public void printCountEngine() {
-        Airbus one = new Airbus("A380");
-        if(one.getName() == "A380" ) {
-            COUNT_ENGINE = 4;
-        }
-
-        System.out.println("Количество двигателей равно: " + COUNT_ENGINE);
+        int countEngine = "A380".equals(this.name) ? 4: COUNT_ENGINE;
+        System.out.println("Количество двигателей равно: " + countEngine);
     }
 
     @Override
     public String toString() {
         return "Airbus{"
-                + "name='" + name + '\''
+                + "name='" + this.name + '\''
                 + '}';
     }
 }
