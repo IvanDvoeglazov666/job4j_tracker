@@ -11,6 +11,7 @@ public class StringCompare implements Comparator<String> {
             for (int i = index; i < rig.length; i++) {
                return Integer.compare(left.charAt(index), right.charAt(i));
             }
+
         }
         return -1;
     }
