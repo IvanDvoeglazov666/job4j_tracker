@@ -8,45 +8,14 @@ public class Item {
     private int id;
     private String name;
     private LocalDateTime currentDateTime = LocalDateTime.now();
-
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", currentDateTime=" + currentDateTime +
-                ", currentDateTimeFormat='" + currentDateTimeFormat + '\'' +
-                '}';
-    }
-
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-    private String currentDateTimeFormat = currentDateTime.format(formatter);
-
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     public Item() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Item item = (Item) o;
-        return id == item.id && Objects.equals(name, item.name) && Objects.equals(currentDateTime,
-                item.currentDateTime) && Objects.equals(formatter, item.formatter)
-                && Objects.equals(currentDateTimeFormat, item.currentDateTimeFormat);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, currentDateTime, formatter, currentDateTimeFormat);
-    }
-
-
-    public Item(int id, String name, String currentDateTimeFormat) {
+    public Item(int id, String name) {
         this.id = id;
         this.name = name;
-        this.currentDateTimeFormat = currentDateTimeFormat;
     }
 
     public Item(String name) {
@@ -69,10 +38,31 @@ public class Item {
         this.name = name;
     }
 
-   public String getCurrentDateTimeFormat() {
-        return currentDateTimeFormat;
-   }
+    public LocalDateTime getCreated() {
+        return currentDateTime;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return id == item.id && Objects.equals(name, item.name) && Objects.equals(currentDateTime, item.currentDateTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, currentDateTime);
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", created=" + currentDateTime.format(FORMATTER) +
+                '}';
+    }
 
 
 }
