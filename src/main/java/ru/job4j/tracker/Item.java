@@ -7,7 +7,7 @@ import java.util.*;
 public class Item {
     private int id;
     private String name;
-    private LocalDateTime currentDateTime = LocalDateTime.now();
+    private final LocalDateTime currentDateTime = LocalDateTime.now();
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     public Item() {
@@ -54,7 +54,6 @@ public class Item {
     public int hashCode() {
         return Objects.hash(id, name, currentDateTime);
     }
-
     @Override
     public String toString() {
         return "Item{" +
