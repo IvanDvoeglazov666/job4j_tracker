@@ -52,7 +52,7 @@ public class JobTest {
         Comparator<Job> cmdNameUP = new JobDescByNameUP().thenComparing(new JobDescByPriorityUP());
         int rsl = cmdNameUP.compare(
                 new Job("ivan", 4),
-                new Job("petya", 21)
+                new Job("ivan", 21)
         );
         assertThat(rsl, lessThan(0));
     }
@@ -62,7 +62,7 @@ public class JobTest {
         Comparator<Job> cmdNameUP = new JobDescByNameDown().thenComparing(new JobDescByPriorityDown());
         int rsl = cmdNameUP.compare(
                 new Job("ivan", 4),
-                new Job("petya", 21)
+                new Job("ivan", 21)
         );
         assertThat(rsl, lessThan(8));
     }
