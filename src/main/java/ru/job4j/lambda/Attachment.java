@@ -1,5 +1,9 @@
 package ru.job4j.lambda;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
+
 public class Attachment {
     private String name;
     private int size;
