@@ -26,7 +26,7 @@ public class StringCompareTest {
                 "Ivanov",
                 "Ivanova"
         );
-        assertThat(rst, lessThan(0));
+        assertThat(rst, lessThan(1));
     }
 
     @Test
