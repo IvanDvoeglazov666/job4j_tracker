@@ -11,7 +11,7 @@ public class FI {
                  "гражданский мир и согласие"};
 
         Comparator<String> cmpTextUp = (left, right) -> left.compareTo(right);
-        Comparator<String> cmpTextDown = (left, right) -> right.compareTo(left);
+        Comparator<String> cmpTextDown = (left, right) -> Integer.compare(right.length(), left.length());
         Arrays.sort(arrays, cmpTextUp);
         for (String index: arrays) {
             System.out.println(index);
