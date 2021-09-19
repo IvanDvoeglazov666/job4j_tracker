@@ -16,10 +16,10 @@ public class PhoneDictionary {
         Predicate<Person> combinThree = (person) -> person.getPhone().contains(key);
         Predicate<Person> combinFour = (person) -> person.getAddress().contains(key);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
-            if (combine.test(person) || combineTwo.test(person) || combinThree.test(person)
-                    || combinFour.test(person)) {
-                result.add(person);
+        for (Person var : persons) {
+            if (combine.test(var) || combineTwo.test(var) || combinThree.test(var)
+                    || combinFour.test(var)) {
+                result.add(var);
             }
         }
         return result;
