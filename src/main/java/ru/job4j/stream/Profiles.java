@@ -12,9 +12,8 @@ public class Profiles {
     }
 
     public List<Address> sorted(List<Address> addresses) {
-        Comparator<Address> comparator = (o1, o2) -> o2.getCity().compareTo(o1.getCity());
         List<Address> rsl = addresses.stream()
-                .sorted(comparator)
+                .sorted(Comparator.comparing(Address::getCity))
                 .distinct()
                 .collect(Collectors.toList());
         return rsl;

@@ -39,9 +39,9 @@ public class ProfilesTest {
         );
         Profiles names = new Profiles();
         List<Address> rsl = names.sorted(exept);
-        List<Address> ex = List.of(new Address("Perm", "Lenina", 4, 25),
+        List<Address> ex = List.of(new Address("Bryansk", "Pik", 56, 2),
                 new Address("Duba", "dds", 3, 4),
-                new Address("Bryansk", "Pik", 56, 2)
+                new Address("Perm", "Lenina", 4, 25)
                 );
         assertThat(rsl, is(ex));
     }
