@@ -28,8 +28,8 @@ public class FunTest {
     @Test
     public void whenLinearFunctionThenIndicativeResults() {
         Fun function = new Fun();
-        List<Double> result = function.diapason(5, 8, x -> Math.pow(x,x));
-        List<Double> expected = Arrays.asList(3125D, 46656D, 823543D);
+        List<Double> result = function.diapason(5, 8, x -> Math.pow(2,x));
+        List<Double> expected = Arrays.asList(32D, 64D, 128D);
         assertThat(result, is(expected));
     }
 }
